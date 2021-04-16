@@ -1,17 +1,30 @@
 .logo {
     display: grid;
+    align-items: center;
+    grid-column-gap: 0.5rem;
     grid-template:
         "i h"
-        "i s" / 1fr 3fr;
+        "i s";
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1rem;
+    cursor: pointer;
+    grid-area: l;
+}
+
+.logo:hover {
+    border-color: var(--color-dim);
 }
 
 .logo .logo__img {
-    max-width: 2rem;
+    max-width: 3rem;
     grid-area: i;
 }
 
 .logo .logo__heading {
+    color: var(--color-light);
     grid-area: h;
+    margin: 0;
 }
 
 .logo .logo__desc {

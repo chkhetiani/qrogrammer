@@ -1,5 +1,17 @@
+import { Route, Switch } from "react-router";
+import { About } from "../pages/about";
+import { Home } from "../pages/home";
+import { Post } from "../pages/post";
 import "./page.css";
 
 export const Page: React.FC = () => {
-    return <div className="page">page</div>;
+    return (
+        <div className="container page">
+            <Switch>
+                <Route path="/about" exact component={About} />
+                <Route path="/" exact component={Home} />
+                <Route path="/" component={Post} />
+            </Switch>
+        </div>
+    );
 };
