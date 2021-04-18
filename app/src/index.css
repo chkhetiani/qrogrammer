@@ -14,6 +14,14 @@ code {
         monospace;
 }
 
+h1,
+h2,
+h3,
+span,
+p {
+    text-rendering: optimizeLegibility;
+}
+
 .container {
     border: 1px solid var(--border-color);
     border-radius: 4px;
