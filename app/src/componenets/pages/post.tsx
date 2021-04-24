@@ -1,5 +1,7 @@
+// import ReactHTMLParser from "react-html-parser";
 import { useLocation } from "react-router-dom";
 import { useGet } from "../../hooks/http";
+import { parse } from "../../services/parser";
 import { formatDate } from "../../services/utils";
 import { Absent } from "./absent";
 import "./post.css";
@@ -27,7 +29,12 @@ export const Post: React.FC = () => {
                 <>
                     <span>{formatDate(data!.releaseDate)}</span>
                     <h1 className="post__title">{data!.title}</h1>
-                    <p>{data!.content}</p>
+                    {/* <p>{ReactHTMLParser(parse(data!.content))}</p> */}
+                    <p
+                        dangerouslySetInnerHTML={{
+                            __html: parse(data!.content),
+                        }}
+                    />
                     {/* <p>{JSON.stringify(data)}</p> */}
                 </>
             )}
