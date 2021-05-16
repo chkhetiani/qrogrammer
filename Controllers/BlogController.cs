@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using qrogrammer.Data;
 using qrogrammer.Models;
+using qrogrammer.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace qrogrammer.Controllers
         }
 
         [HttpGet]
+        [Auth]
         public IActionResult Index()
         {
             return Json(_data.Blogs.Take(100));
@@ -33,6 +35,7 @@ namespace qrogrammer.Controllers
 
         [HttpPost]
         [Route("Add")]
+        [Auth]
         public IActionResult Add([FromBody] Blog blog)
         {
             blog.ReleaseDate = DateTime.Now;

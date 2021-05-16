@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using qrogrammer.Data;
 using Microsoft.EntityFrameworkCore;
 using qrogrammer.Utils;
+using qrogrammer.Services;
 
 namespace qrogrammer
 {
@@ -25,6 +26,8 @@ namespace qrogrammer
         {
             var config = new Settings();
             Configuration.Bind(config);
+
+            services.AddScoped<IUserService, UserService>();
 
             services.AddControllersWithViews();
 
@@ -56,6 +59,8 @@ namespace qrogrammer
             app.UseSpaStaticFiles();
 
             app.UseRouting();
+
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

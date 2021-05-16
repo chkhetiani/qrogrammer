@@ -16,16 +16,24 @@ export const Sidebar: React.FC = () => {
                         about
                     </Link>
                 </li>
-
                 <li>
                     <Link className="url" to="/absent">
                         absent
                     </Link>
                 </li>
-
                 <li>
                     <Link className="url" to="/1">
                         1
+                    </Link>
+                </li>
+                <li>
+                    <Link className="url" to="/4">
+                        4
+                    </Link>
+                </li>
+                <li>
+                    <Link className="url" to="/login">
+                        login
                     </Link>
                 </li>
             </ul>

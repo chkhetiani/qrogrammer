@@ -22,7 +22,7 @@
 }
 
 .logo .logo__heading {
-    color: var(--color-light);
+    /* color: var(--color-light); */
     grid-area: h;
     margin: 0;
 }

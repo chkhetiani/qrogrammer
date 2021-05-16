@@ -1,3 +1,4 @@
 .page {
     grid-area: p;
+    min-width: 0;
 }

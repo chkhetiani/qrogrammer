@@ -16,9 +16,12 @@ const rules: Rule[] = [
     { regex: /(\*\*)(.*?)\1/g, replace: "<b>$2</b>" },
     { regex: /(\*)(.*?)\1/g, replace: "<i>$2</i>" },
     { regex: /(\*\*\*)(.*?)\1/g, replace: "<b><i>$2</i></b>" },
-    { regex: /\[(.*?)\]\((.*?)\)/g, replace: "<a href='$1'>$2</a>" },
+    {
+        regex: /\[(.*?)\]\((.*?)\)/g,
+        replace: "<a style='color:var(--blue)' href='$1'>$2</a>",
+    },
     { regex: /^> (.*)/gm, replace: "<blockquote>$1</blockquote>" },
-    { regex: /(```)(.*?)\1/g, replace: "<pre>$2</pre>" },
+    { regex: /(```)(.*?)\1/gs, replace: "<pre>$2</pre>" },
     { regex: /(#+) (.*)/g, replace: "<h$1>$2</h$1>", name: "h" },
     { regex: /(^\s*$)/gms, replace: "<br/>" },
 ];
